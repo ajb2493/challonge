@@ -29,11 +29,11 @@ namespace ChallongeSync
             {
                 // Parse the response body. Blocking!
                 Console.WriteLine(response.Content.ReadAsStringAsync());
-                var data = response.Content.ReadAsAsync<IEnumerable<Object>>().Result;
+                var data = response.Content.ReadAsAsync<IEnumerable<Tournament>>().Result;
                 //var dataObjects = response.Content.ReadAsAsync<IEnumerable>().Result;
-                foreach (var d in data)
+                foreach (Tournament d in data)
                 {
-                    //Console.WriteLine("{0}", d.Name);
+                    Console.WriteLine("{0}", d.name);
                 }
             }
             else
